@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hasil Akhir</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* CSS untuk membuat latar belakang biru */
+      body {
+        background-image: url("{{ url_for('static', filename='images/leadspace.png') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "Montserrat", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      /* CSS untuk membuat elemen berada di posisi tengah */
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* CSS untuk membuat card */
+      .card {
+        background-color: #fff;
+        width: 1200px;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      /* CSS untuk membuat judul besar */
+      h1 {
+        font-size: 3rem;
+        color: #264653;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      /* CSS untuk membuat subjudul */
+      h2,
+      h3 {
+        font-size: 2rem;
+        color: #2a9d8f;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      /* CSS untuk membuat gambar */
+      img {
+        width: 200px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        margin: 2rem auto;
+      }
+      /* CSS untuk membuat tombol */
+      .btn-primary {
+        background-color: #264653;
+        border-color: #264653;
+      }
+      /* CSS untuk membuat tombol ketika dihover */
+      .btn-primary:hover {
+        background-color: #2a9d8f;
+        border-color: #2a9d8f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Result</h1>
+        <h2>Predicted Label: {{ label }}</h2>
+        <h3>Accuracy: {{ accuracy }}%</h3>
+        <img src="{{ image_file }}" alt="Uploaded Image" />
+        <br />
+        <br />
+        <button class="btn btn-primary" onclick="location.href='/';">
+          <i class="fas fa-redo"></i> Coba Lagi
+        </button>
+      </div>
+    </div>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
